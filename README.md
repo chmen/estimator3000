@@ -34,7 +34,18 @@ if you need to run on specific port use
 npm run dev -- --port 3333
 ```
 
-## Start development via nginx
+## Start locally via nginx
+
+open nginx file config and add a config from the section below
+```
+nano /usr/local/etc/nginx/nginx.conf
+```
+
+restart nginx with new config
+```
+brew services restart nginx
+```
+
 Front should run on `http://localhost:3333` and backend on `http://localhost:3000` Example of nginx configuration(not polished)
 ```
 
