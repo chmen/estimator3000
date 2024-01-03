@@ -10,7 +10,9 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@bg-dev/nuxt-naiveui": "^1.5.2",
     "@nuxt/devtools": "latest",
+    "naive-ui": "^2.35.0",
     "nuxt": "^3.7.4",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5"
