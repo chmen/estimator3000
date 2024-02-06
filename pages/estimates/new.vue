@@ -1,9 +1,9 @@
 <template>
   <div>
     <h1>Create your estimate</h1>
-    <form @submit.prevent="handleSubmit">
+    <form>
       <input type="text" v-model="formData.title" placeholder="Title" >
-      <button type="submit">Submit</button>
+      <button type="button" @click="handleSubmit">Submit</button>
     </form>
   </div>
 </template>
@@ -18,8 +18,17 @@
       };
     },
     methods: {
-    handleSubmit() {
-      console.log('Form submitted with data:', this.formData);
+    async handleSubmit() {
+      const { data: response } = await useFetch('http://localhost:3000/api/v1/estimates', {
+        method: 'post',
+        body: {
+          data: this.formData
+        }
+      })
+
+      if (response) {
+        alert(response.status);
+      }
       }
     }
   }
